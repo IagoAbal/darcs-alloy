@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<alloy>
+
+<view>
+
+<projection> <type name="tree/Tree"/> </projection>
+
+<defaultnode/>
+
+<defaultedge/>
+
+<node>
+   <type name="Int"/>
+   <type name="String"/>
+   <type name="univ"/>
+   <type name="seq/Int"/>
+   <type name="types/Adddir"/>
+   <type name="types/Addfile"/>
+   <type name="types/DirPatch"/>
+   <type name="types/FilePatch"/>
+   <type name="types/Hunk"/>
+   <type name="types/Move"/>
+   <type name="types/Rmdir"/>
+   <type name="types/Rmfile"/>
+   <set name="$CommuteSFHunks_Consistent_Case4_h1" type="types/Hunk"/>
+   <set name="$CommuteSFHunks_Consistent_Case4_h1&apos;" type="types/Hunk"/>
+   <set name="$CommuteSFHunks_Consistent_Case4_h2" type="types/Hunk"/>
+   <set name="$CommuteSFHunks_Consistent_Case4_h2&apos;" type="types/Hunk"/>
+   <set name="$sequential_t1" type="tree/Tree"/>
+   <set name="$sequential_t2" type="tree/Tree"/>
+   <set name="$sequential_t3" type="tree/Tree"/>
+</node>
+
+<node color="Blue">
+   <type name="types/Patch"/>
+</node>
+
+<node shape="Circle" color="White">
+   <type name="tree/Tree"/>
+</node>
+
+<node style="Dashed">
+   <type name="tree/Line"/>
+   <type name="tree/Name"/>
+</node>
+
+<node style="Dashed" color="Gray">
+   <type name="tree/Path"/>
+</node>
+
+<node style="Solid" shape="Ellipse" color="White">
+   <set name="Files" type="tree/Path"/>
+</node>
+
+<node style="Solid" shape="Trapezoid" color="White">
+   <set name="Dirs" type="tree/Path"/>
+</node>
+
+<edge layout="yes">
+   <relation name="parent"> <type name="tree/Path"/> <type name="tree/Path"/> </relation>
+</edge>
+
+<edge visible="no" attribute="yes">
+   <relation name="line"> <type name="types/Hunk"/> <type name="Int"/> </relation>
+   <relation name="name"> <type name="tree/Path"/> <type name="tree/Name"/> </relation>
+   <relation name="new"> <type name="types/Hunk"/> <type name="seq/Int"/> <type name="tree/Line"/> </relation>
+   <relation name="old"> <type name="types/Hunk"/> <type name="seq/Int"/> <type name="tree/Line"/> </relation>
+</edge>
+
+</view>
+
+</alloy>

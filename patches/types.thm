@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<alloy>
+
+<view>
+
+<defaultnode/>
+
+<defaultedge/>
+
+<node>
+   <type name="Adddir"/>
+   <type name="Addfile"/>
+   <type name="DirPatch"/>
+   <type name="FilePatch"/>
+   <type name="Hunk"/>
+   <type name="Move"/>
+   <type name="Rmdir"/>
+   <type name="Rmfile"/>
+   <type name="String"/>
+   <type name="univ"/>
+   <type name="seq/Int"/>
+</node>
+
+<node color="White">
+   <type name="Patch"/>
+</node>
+
+<node visible="no">
+   <type name="Int"/>
+   <type name="tree/Tree"/>
+</node>
+
+<node visible="no" style="Dashed">
+   <type name="tree/Line"/>
+   <type name="tree/Name"/>
+</node>
+
+<node visible="no" style="Solid" color="White">
+   <type name="tree/Path"/>
+</node>
+
+<edge layout="yes">
+   <relation name="parent"> <type name="tree/Path"/> <type name="tree/Path"/> </relation>
+</edge>
+
+<edge visible="no" attribute="yes">
+   <relation name="dest"> <type name="Move"/> <type name="tree/Path"/> </relation>
+   <relation name="line"> <type name="Hunk"/> <type name="Int"/> </relation>
+   <relation name="name"> <type name="tree/Path"/> <type name="tree/Name"/> </relation>
+   <relation name="new"> <type name="Hunk"/> <type name="seq/Int"/> <type name="tree/Line"/> </relation>
+   <relation name="old"> <type name="Hunk"/> <type name="seq/Int"/> <type name="tree/Line"/> </relation>
+   <relation name="path"> <type name="DirPatch"/> <type name="tree/Path"/> </relation>
+   <relation name="path"> <type name="FilePatch"/> <type name="tree/Path"/> </relation>
+   <relation name="source"> <type name="Move"/> <type name="tree/Path"/> </relation>
+</edge>
+
+</view>
+
+</alloy>

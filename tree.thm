@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<alloy>
+
+<view>
+
+<projection> <type name="Tree"/> </projection>
+
+<defaultnode/>
+
+<defaultedge/>
+
+<node>
+   <type name="Int"/>
+   <type name="String"/>
+   <type name="univ"/>
+   <type name="seq/Int"/>
+   <set name="$Rename_Consistent_NonemptyDir_dest" type="Path"/>
+   <set name="$Rename_Consistent_NonemptyDir_src" type="Path"/>
+   <set name="$Rename_Consistent_NonemptyDir_t" type="Tree"/>
+   <set name="$Rename_Consistent_NonemptyDir_t&apos;" type="Tree"/>
+</node>
+
+<node color="Gray">
+   <type name="Path"/>
+</node>
+
+<node shape="Circle" color="White">
+   <type name="Tree"/>
+</node>
+
+<node shape="Ellipse" color="White">
+   <set name="Files" type="Path"/>
+</node>
+
+<node shape="Trapezoid" color="White">
+   <set name="Dirs" type="Path"/>
+</node>
+
+<node style="Dashed">
+   <type name="Line"/>
+   <type name="Name"/>
+</node>
+
+<edge layout="yes">
+   <relation name="parent"> <type name="Path"/> <type name="Path"/> </relation>
+</edge>
+
+<edge visible="no" attribute="yes">
+   <relation name="content"> <type name="Path"/> <type name="seq/Int"/> <type name="Line"/> </relation>
+   <relation name="name"> <type name="Path"/> <type name="Name"/> </relation>
+</edge>
+
+</view>
+
+</alloy>
